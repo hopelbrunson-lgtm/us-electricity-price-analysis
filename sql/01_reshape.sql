@@ -1,4 +1,4 @@
---table reshape & data validation
+--table reshape
 CREATE OR REPLACE TABLE `eia-electricity-analysis.electricity.retail_sales` AS 
   SELECT DATE(year,month,1) AS month_date, year, month, state, data_status, sector, revenue_thousand_usd, mwh, customers, 
     NULLIF(price_cents_kwh, 0) AS price_cents_kwh --no sales (0) is treated as missing to avoid bringing averages down
